@@ -7,9 +7,7 @@ const FilterLinks = ({activeFilter}) => {
       <Link />
       <Link />
       <Link />
-      <div>
-        <p>Current state is: {activeFilter}</p>
-      </div>
+      <input type="button" className="btn btn-primary" value="Help" />
     </div>
   );
 }

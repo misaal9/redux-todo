@@ -1,7 +1,21 @@
+/* AddToDo */
+.add-to-do, .to-do-list {
+  margin: 30px 0;
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+}
+
 /* ToDoList */
 ul.to-do-list li {
   cursor: pointer;
 }
 ul.to-do-list li.strikethrough {
   text-decoration: line-through;
+}
+ul.to-do-list li.not-added {
+  cursor: default;
+  color: #ccc;
 }

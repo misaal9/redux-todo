@@ -26,12 +26,13 @@ class AddToDo extends Component {
 
   render(){
     return (
-      <form onSubmit={this.onSubmitHandler}>
+      <form className="add-to-do" onSubmit={this.onSubmitHandler}>
         <input
           type="text"
           placeholder="Enter new todo"
           onChange={this.onInputChangeHandler}
           value={this.state.addToDoText}
+          className="form-control"
           />
       </form>
     );
