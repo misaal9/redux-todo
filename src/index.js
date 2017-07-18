@@ -7,6 +7,8 @@ import ToDoList from './containers/ToDoList';
 import FilterLinks from './containers/FilterLinks';
 import toDoApp from './reducers';
 
+import './style/style.css';
+
 let store = createStore(toDoApp);
 
 const App = () => {

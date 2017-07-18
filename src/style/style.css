@@ -1,0 +1,7 @@
+/* ToDoList */
+ul.to-do-list li {
+  cursor: pointer;
+}
+ul.to-do-list li.strikethrough {
+  text-decoration: line-through;
+}

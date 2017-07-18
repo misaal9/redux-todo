@@ -1,20 +1,34 @@
 import deepFreeze from 'deep-freeze';
 import expect from 'expect';
-import { ADD_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO } from '../actions';
+
+let count = 0;
 
 export const ToDoReducer = (state=[], action) => {
   switch (action.type) {
     case ADD_TODO:
       return [...state, {
         text: action.text,
-        completed: false
+        completed: false,
+        id: count++
       }];
+    case TOGGLE_TODO:
+      return state.map((todoItem, index) => {
+        if (todoItem.id !== action.task.id) {
+          return todoItem;
+        }
+        let currentStatus = action.task.completed;
+        return {
+          ...todoItem,
+          completed: !currentStatus
+        }
+      });
     default:
       return state;
   }
 };
 
-/**test todos **/
+/** test todos **/
 const testTodos = () => {
   const beforeState = [];
   const action = {
@@ -23,7 +37,8 @@ const testTodos = () => {
   };
   const afterState = [{
     text: action.text,
-    completed: false
+    completed: false,
+    id: 0
   }];
 
   deepFreeze(beforeState);
