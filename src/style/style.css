@@ -18,4 +18,5 @@ ul.to-do-list li.strikethrough {
 ul.to-do-list li.not-added {
   cursor: default;
   color: #ccc;
+  border: dashed 2px #ccc;
 }
