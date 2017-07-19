@@ -14,6 +14,7 @@ let store = createStore(toDoApp);
 const App = () => {
   return(
     <div>
+      <h3>React Redux ToDo List</h3>
       <AddToDo />
       <ToDoList />
       <FilterLinks />

@@ -1,13 +1,14 @@
 import React from 'react';
-import Link from './Link';
+import Filter from './Filter';
 
-const FilterLinks = ({activeFilter}) => {
+import { FILTER } from '../actions'
+
+const FilterLinks = ({activeFilter, setFilter}) => {
   return (
-    <div>
-      <Link />
-      <Link />
-      <Link />
-      <input type="button" className="btn btn-primary" value="Help" />
+    <div className="btn-group">
+      <Filter activeFilter={activeFilter} label={FILTER.SHOW_ALL} setFilter={setFilter.setFilter}/>
+      <Filter activeFilter={activeFilter} label={FILTER.SHOW_C} setFilter={setFilter.setFilter}/>
+      <Filter activeFilter={activeFilter} label={FILTER.SHOW_IC} setFilter={setFilter.setFilter}/>
     </div>
   );
 }
